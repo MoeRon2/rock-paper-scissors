@@ -1,7 +1,19 @@
-let humanScore, computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 function playGame() {
-    pass
+    for (let i = 0; i < 5; i++) {
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);
+    }
+    if (humanScore > computerScore)
+    {
+        alert(`You win! Your Score: ${humanScore} || The Computer's Score: ${computerScore}`)
+    }
+    else {
+        alert(`You couldn't win. Final Scores were Your Score: ${humanScore} || The Computer's Score: ${computerScore}`)
+    }
 }
 
 
@@ -20,7 +32,7 @@ function getComputerChoice() {
 
 
 function getHumanChoice() {
-    return parseInt(prompt("Rock, paper, scissors, shoot!"));
+    return prompt("Rock, paper, scissors, shoot!");
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -36,12 +48,12 @@ function playRound(humanChoice, computerChoice) {
     };
     lose = () => {
         console.log(loseString);
-        computerChoice++;
+        computerScore++;
     };
     if (humanChoice === computerChoice) {
         console.log("Tie!");
         humanScore++;
-        computerChoice++;
+        computerScore++;
     }
 
     else if (humanChoice === "rock") {
