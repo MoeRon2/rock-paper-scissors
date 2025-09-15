@@ -88,4 +88,30 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
-playGame();
+// Event listeners
+
+
+const selections = document.querySelector('#selections');
+
+selections.addEventListener('click', (event) => {
+    let target = event.target;
+
+
+    const computerChoice = getComputerChoice();
+
+    switch(target.id) {
+        case 'rock':
+            console.log("rock clicked");
+            playRound("rock",computerChoice);
+            break;
+        case 'paper':
+            console.log("paper clicked");
+            playRound("paper",computerChoice);
+            break;
+        case 'scissors':
+            console.log("scissors clicked");
+            playRound("scissors",computerChoice);
+    }
+    
+
+});
