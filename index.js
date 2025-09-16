@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let gameOver = false;
 
 function playGame() {
     for (let i = 0; i < 5; i++) {
@@ -36,6 +37,10 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    if (gameOver) {
+        resetGame();
+    }
+    
     humanChoice = humanChoice.toLowerCase();  
     computerChoice = computerChoice.toLowerCase();
 
@@ -96,6 +101,32 @@ function playRound(humanChoice, computerChoice) {
     // Update visuals
     humanScoreUI.textContent = humanScore;
     computerScoreUI.textContent = computerScore
+
+    if (humanScore === 5 || computerScore === 5) {
+       if (humanScore > computerScore) {
+        result.textContent = "You win the game!";
+        result.style.color = "green";
+       } 
+       else if (humanScore < computerScore) {
+        result.textContent = "You lost the game";
+        result.style.color = "red";
+       }
+       else {
+        result.textContent = "What are the odds a tie!";
+       }
+       gameOver = true;
+    }
+}
+
+
+function resetGame() {
+    const humanScoreUI = document.querySelector("#humanScore");
+    const computerScoreUI = document.querySelector("#computerScore");
+    humanScore = 0;
+    computerScore = 0;
+    gameOver = false;
+    result.style.color = "black";
+
 }
 
 
