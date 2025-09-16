@@ -42,16 +42,23 @@ function playRound(humanChoice, computerChoice) {
     winString = `You win! ${humanChoice} beats ${computerChoice}`;
     loseString = `You lose. ${computerChoice} beats ${humanChoice}`;
 
+    const result = document.querySelector("#result");
+
+    const humanScoreUI = document.querySelector("#humanScore");
+    const computerScoreUI = document.querySelector("#computerScore");
+
+
     win = () => { 
-        console.log(winString);
+        result.textContent = winString;
         humanScore++;
+
     };
     lose = () => {
-        console.log(loseString);
+        result.textContent = loseString;
         computerScore++;
     };
     if (humanChoice === computerChoice) {
-        console.log("Tie!");
+        result.textContent = "Tie!";
         humanScore++;
         computerScore++;
     }
@@ -85,6 +92,10 @@ function playRound(humanChoice, computerChoice) {
         console.log("Wrong input");
     }
 
+
+    // Update visuals
+    humanScoreUI.textContent = humanScore;
+    computerScoreUI.textContent = computerScore
 }
 
 

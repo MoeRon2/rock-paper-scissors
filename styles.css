@@ -1,0 +1,61 @@
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+#scoreLabels {
+    display: flex;
+    font-size: 24px;
+    width: 50vw;
+    text-align: center;
+}
+
+#scoreLabels div {
+    flex: 1;
+}
+
+
+#score {
+    display: flex;
+    height: 20vh;
+    width: 50vw;
+}
+
+#score div {
+    flex: 1;
+    border: solid;
+    font-size: 84px;
+    text-align: center;
+}
+
+#score #humanScore {
+    background-color: aqua;
+}
+
+#score #computerScore {
+    background-color: orange;
+}
+
+
+#selections {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50vh;
+    gap: 30px;
+    width: auto;
+}
+
+#selections button { 
+    font-size: 32px;
+}
+
+
+#result {
+    font-size: 3em;
+}
+
+
